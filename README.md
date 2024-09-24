@@ -1,10 +1,10 @@
-[![Plane Scape](/banner.png)](https://plane-scape-six.vercel.app/)
+[![Plane Scape](/banner.png)](https://plane-scape-app.vercel.app/)
 
-# [**Plane Scape**](https://plane-scape-six.vercel.app/)
+# [**Plane Scape**](https://plane-scape-app.vercel.app/)
 
 **Plane Scape** is an application developed to view and manage flight information. <br />This project allows users to easily track and manage flight information.
 
-Project Demo Link: [https://plane-scape-six.vercel.app/](https://plane-scape-six.vercel.app/)
+Project Demo Link: [https://plane-scape-app.vercel.app/](https://plane-scape-app.vercel.app/)
 
 ## Technologies and Tools
 
