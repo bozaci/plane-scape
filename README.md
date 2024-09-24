@@ -1,10 +1,10 @@
-[![Plane Scape](/banner.png)](https://plane-scape.vercel.app)
+[![Plane Scape](/banner.png)](https://plane-scape-six.vercel.app/)
 
-# [**Plane Scape**](https://plane-scape.vercel.app)
+# [**Plane Scape**](https://plane-scape-six.vercel.app/)
 
 **Plane Scape** is an application developed to view and manage flight information. <br />This project allows users to easily track and manage flight information.
 
-Project Demo Link: [https://plane-scape.vercel.app](https://plane-scape.vercel.app)
+Project Demo Link: [https://plane-scape-six.vercel.app/](https://plane-scape-six.vercel.app/)
 
 ## Technologies and Tools
 
@@ -25,6 +25,7 @@ This project was built using these technologies and tools.
 - Internet connection: Required to run the project
 
 ## .env Example
+
 Here is an example of what your .env file should look like:
 
 ```bash
@@ -43,7 +44,7 @@ VITE_PROXY_URL=https://proxy.example.com
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/bozaci/plane-scape.dev.git
+git clone https://github.com/bozaci/plane-scape.git
 ```
 
 2. Navigate into the project directory:
