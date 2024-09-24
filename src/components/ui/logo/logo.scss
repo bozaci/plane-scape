@@ -1,0 +1,30 @@
+//
+// Logo
+//
+
+@import '../../../styles/variables';
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &:hover &__text {
+    color: $color-primary;
+  }
+
+  &__img {
+    margin-right: 7px;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: $color-dark;
+    transition: all 225ms;
+  }
+}

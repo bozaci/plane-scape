@@ -1,0 +1,29 @@
+//
+// Booking Widget
+//
+
+.booking-widget {
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__icon {
+    font-size: 20px;
+    color: #515151;
+    display: flex;
+
+    &--rotated {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__footer {
+    margin-top: 20px;
+  }
+}

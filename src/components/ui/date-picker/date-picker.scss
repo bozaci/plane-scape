@@ -1,0 +1,41 @@
+//
+// Date Picker
+//
+
+.date-picker {
+  position: relative;
+
+  &.is-active .Calendar {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .Calendar {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-7px);
+    visibility: hidden;
+    transition: all 350ms;
+
+    &__day {
+      border-radius: 5px !important;
+
+      &.-selectedStart {
+        border-radius: 5px 0 0 5px !important;
+      }
+
+      &.-selectedEnd {
+        border-radius: 0 5px 5px 0   !important;
+      }
+
+      &.-selectedBetween {
+        border-radius: 0 !important;
+      }
+    }
+  }
+}

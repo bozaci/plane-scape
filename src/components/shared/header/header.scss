@@ -1,0 +1,19 @@
+//
+// Header
+//
+
+.header {
+  padding: 35px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left-side,
+  &__right-side {
+    display: flex;
+    align-items: center;
+  }
+}

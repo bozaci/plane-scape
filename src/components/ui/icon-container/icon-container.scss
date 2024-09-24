@@ -1,0 +1,41 @@
+//
+// Icon Container
+//
+
+@import '../../../styles/variables';
+
+.icon-container {
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: all 225ms;
+
+  &:hover {
+    cursor: default;
+    background-color: $color-primary-10;
+  }
+
+  &--link:hover {
+    cursor: pointer;
+  }
+
+  &.is-active {
+    background-color: $color-primary-10;
+    pointer-events: none;
+  }
+
+  &__icon {
+    margin-right: 5px;
+    font-size: 20px;
+    color: $color-primary;
+    display: flex;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #4e4e4e;
+  }
+}

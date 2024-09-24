@@ -1,0 +1,20 @@
+//
+// Input Group
+//
+
+.input-group {
+  display: flex;
+  align-items: center;
+
+  & > *:not(:first-child) {
+    margin-left: 5px;
+  }
+
+  & > *:first-child > .input {
+    border-radius: 999px 0 0 999px;
+  }
+
+  & > *:last-child > .input {
+    border-radius: 0 999px 999px 0;
+  }
+}

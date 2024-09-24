@@ -1,0 +1,41 @@
+//
+// Alert Box
+//
+
+@import '../../../styles/variables';
+
+.alert-box {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #ececec;
+  display: flex;
+  align-items: center;
+  color: #000000;
+
+  &--status-error {
+    background-color: #ffe4e4;
+    color: #ae1a1a;
+  }
+
+  &--status-success {
+    background-color: #e8ffdd;
+    color: #4e922f;
+  }
+
+  &--status-warning {
+    background-color: #fff1dd;
+    color: #bd7f26;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  &__icon {
+    font-size: 22px;
+    margin-right: 5px;
+    display: flex;
+  }
+}

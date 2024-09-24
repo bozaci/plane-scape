@@ -1,0 +1,91 @@
+//
+// Select Menu
+//
+
+@import '../../../styles/variables';
+
+.select-menu {
+  position: relative;
+
+  &.is-active &__menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  &.is-active &__arrow-icon {
+    transform: rotateX(180deg);
+  }
+
+  &__inner {
+    position: relative;
+    min-width: 100px;
+    height: 32px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ececec;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    color: #7a7a7a;
+    transition: all 225ms;
+
+    &:hover {
+      cursor: pointer;
+      border-color: #c5c5c5;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__arrow-icon {
+    position: absolute;
+    top: 0;
+    right: 7px;
+    bottom: 0;
+    height: max-content;
+    margin: auto;
+    font-size: 12px;
+    display: flex;
+    transition: all 500ms;
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(32px + 10px); // 32px = .select-menu__inner height
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ececec;
+    background-color: #ffff;
+    color: #7a7a7a;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-7px);
+    visibility: hidden;
+    transition: all 425ms;
+  }
+
+  &__item {
+    padding: 5px 10px;
+    border-radius: calc(8px / 2); // 8px = .select-menu__menu border-radius
+    transition: all 225ms;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #f1f1f1;
+    }
+
+    &.is-selected {
+      background-color: $color-primary;
+      color: #fff;
+      pointer-events: none;
+    }
+  }
+}

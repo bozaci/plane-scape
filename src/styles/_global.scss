@@ -1,0 +1,99 @@
+//
+// Global
+//
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/robotomono-regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/robotomono-medium.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/robotomono-semibold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/robotomono-bold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-medium.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-semibold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-bold.ttf');
+}
+
+body {
+  padding-bottom: 50px;
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins';
+}
+
+.main {
+  min-height: 100vh;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: $container-size;
+  }
+}
+
+.Toastify {
+  overflow: hidden;
+  --toasitfy-toast-width: 400px !important;
+  --toastify-toast-min-height: 55px;
+
+  &__toast {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: 'Gilroy';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #979797;
+  }
+
+  &__close-button {
+    color: #fff;
+    transition: all 125ms;
+  }
+}
