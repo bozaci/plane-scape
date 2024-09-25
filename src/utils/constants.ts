@@ -30,6 +30,13 @@ const airportCodes: Record<string, string> = {
   AOK: 'Karpathos',
   AGP: 'Malaga',
   SPC: 'La Palma',
+  PDL: 'Ponta Delgada',
+  DSS: 'Dakar',
+  KGS: 'Kos',
+  ZTH: 'Zakynthos',
+  PMI: 'Palma de Mallorca',
+  SPU: 'Split',
+  KEF: 'Reykjavik',
 };
 
 const airlineCompanyCodes: Record<string, string> = {
