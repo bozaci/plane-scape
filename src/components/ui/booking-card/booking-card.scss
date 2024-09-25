@@ -2,6 +2,8 @@
 // Booking Card
 //
 
+@import '../../../styles/mixins';
+
 .booking-card {
   position: relative;
   display: flex;
@@ -92,5 +94,16 @@
     width: max-content;
     padding: 12px 20px;
     border-radius: 0 0 7px 7px;
+  }
+
+  /**
+   *
+   * Responsive
+   *
+   */
+  @include mobile() {
+    &__item::before {
+      content: none !important;
+    }
   }
 }

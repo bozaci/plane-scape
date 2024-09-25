@@ -70,7 +70,7 @@ const BookingCard: FC<BookingCardProps> = ({
 
         <div className="booking-card__main">
           <div className="row g-4">
-            <div className="col-lg-4 booking-card__item spacing spacing--small">
+            <div className="col-4 col-sm-4 col-md-4 col-lg-4 booking-card__item spacing spacing--small">
               <div className="d-flex align-items-center mb-1">
                 <div className="booking-card__icon me-1">
                   <Icon.AirplaneTakeoff weight="bold" />
@@ -87,7 +87,7 @@ const BookingCard: FC<BookingCardProps> = ({
               </p>
             </div>
 
-            <div className="col-lg-4 booking-card__item spacing spacing--small align-items-center">
+            <div className="col-4 col-sm-4 col-md-4 col-lg-4 booking-card__item spacing spacing--small align-items-center text-center">
               <p className="booking-card__text booking-card__text--medium text-semibold">
                 {getAirlineCompanyNameByCode(airlineCompanyCode)}
               </p>
@@ -99,7 +99,7 @@ const BookingCard: FC<BookingCardProps> = ({
               <p className="booking-card__text booking-card__text--medium">{totalTime} (Nonstop)</p>
             </div>
 
-            <div className="col-lg-4 booking-card__item spacing spacing--small align-items-end">
+            <div className="col-4 col-sm-4 col-md-4 col-lg-4 booking-card__item spacing spacing--small align-items-end text-right">
               <div className="d-flex align-items-center mb-1">
                 <div className="booking-card__icon me-1">
                   <Icon.AirplaneLanding weight="bold" />
