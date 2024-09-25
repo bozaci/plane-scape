@@ -146,7 +146,7 @@ const Home = () => {
               <BookingWidget />
 
               <div className="row g-4">
-                <div className="col-lg-9 spacing spacing--medium">
+                <div className="col-md-9 col-lg-9 spacing spacing--medium">
                   {isLoading ? (
                     <Loader text="Flights are loading.." />
                   ) : (
@@ -176,7 +176,7 @@ const Home = () => {
                   )}
                 </div>
 
-                <div className="col-lg-3">
+                <div className="col-md-3 col-lg-3">
                   <div className="home-section__filter">
                     <div className="home-section__filter-item">
                       <div className="home-section__filter-item-header">
