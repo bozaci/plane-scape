@@ -25,6 +25,11 @@ const airportCodes: Record<string, string> = {
   ALC: 'Alicante',
   ATH: 'Athens',
   ADB: 'Izmir',
+  RAK: 'Marrakesh',
+  FAO: 'Faro',
+  AOK: 'Karpathos',
+  AGP: 'Malaga',
+  SPC: 'La Palma',
 };
 
 const airlineCompanyCodes: Record<string, string> = {
