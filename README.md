@@ -6,6 +6,11 @@
 
 Project Demo Link: [https://plane-scape-app.vercel.app/](https://plane-scape-app.vercel.app/)
 
+## Project Screenshots
+
+[![Homepage](/project-screenshot-homepage.png)](https://plane-scape-app.vercel.app/)
+[![My-Flights](/project-screenshot-my-flights-page.png)](https://plane-scape-app.vercel.app/)
+
 ## Technologies and Tools
 
 This project was built using these technologies and tools.
