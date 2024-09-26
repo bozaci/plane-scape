@@ -8,6 +8,11 @@
 
   & > *:not(:first-child) {
     margin-left: 5px;
+    border-radius: 0;
+  }
+
+  & > *:not(:first-child, :last-child) {
+    border-radius: 0 !important;
   }
 
   & > *:first-child > .input {
