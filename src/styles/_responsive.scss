@@ -1,0 +1,12 @@
+//
+// Responsive
+//
+
+@import './mixins';
+
+@include mobileOrTablet() {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}

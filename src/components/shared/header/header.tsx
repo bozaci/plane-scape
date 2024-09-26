@@ -31,7 +31,7 @@ const Header = () => {
               icon={<Icon.Airplane weight="fill" />}
               text="My Flights"
               href="/my-flights"
-              className="me-3"
+              className="me-0 me-lg-3"
             />
             <Account
               avatar={userAvatarImage}

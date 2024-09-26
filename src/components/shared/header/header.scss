@@ -2,6 +2,8 @@
 // Header
 //
 
+@import '../../../styles/mixins';
+
 .header {
   padding: 35px 0;
 
@@ -15,5 +17,14 @@
   &__right-side {
     display: flex;
     align-items: center;
+  }
+
+  /**
+   *
+   * Responsive
+   *
+   */
+  @include mobileOrTablet() {
+    padding: 20px 0;
   }
 }
