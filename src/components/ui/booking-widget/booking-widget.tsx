@@ -33,10 +33,10 @@ const BookingWidget = () => {
 
   const handleShowFlights = () => {
     if (tab === 'round-trip' && (!takeOff || !landing || !startDate || !endDate))
-      return errorNotify('All fields must be filled in to list the flights. round-trip');
+      return errorNotify('All fields must be filled in to list the flights.');
 
     if (tab === 'one-way' && (!takeOff || !startDate || !endDate))
-      return errorNotify('All fields must be filled in to list the flights. one-way');
+      return errorNotify('All fields must be filled in to list the flights');
 
     const formattedTakeOff = getCodeByCity(takeOff);
     const formattedLanding = getCodeByCity(landing);
