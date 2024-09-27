@@ -37,6 +37,9 @@ const airportCodes: Record<string, string> = {
   PMI: 'Palma de Mallorca',
   SPU: 'Split',
   KEF: 'Reykjavik',
+  VLC: 'Valencia',
+  LCA: 'Larnaca',
+  FUE: 'Fuerteventura',
 };
 
 const airlineCompanyCodes: Record<string, string> = {
