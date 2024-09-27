@@ -47,8 +47,8 @@ const airlineCompanyCodes: Record<string, string> = {
   OR: 'Transavia',
   KL: 'KLM Royal Dutch Airlines',
   MP: 'Martinair',
-  DL: 'Delta Air Lines',
-  CD: 'Nauru Airlines ',
+  DL: 'Delta Airlines',
+  CD: 'Nauru Airlines',
 };
 
 export { airportCodes, airlineCompanyCodes };

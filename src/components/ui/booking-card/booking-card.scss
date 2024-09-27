@@ -77,6 +77,15 @@
     }
   }
 
+  &__airline-company-logo {
+    &-img {
+      height: 15px;
+      user-select: none;
+      -webkit-user-select: none;
+      pointer-events: none;
+    }
+  }
+
   &__footer {
     position: relative;
     margin-top: 25px;

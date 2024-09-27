@@ -3,6 +3,7 @@ import * as Icon from 'phosphor-react';
 import { BookingCardProps } from './booking-card.type';
 import { getCityByCode } from '@/utils/getCityByCode';
 import { getAirlineCompanyNameByCode } from '@/utils/getAirlineCompanyNameByCode';
+import { generateSlug } from '@/utils/generateSlug';
 import { errorNotify, successNotify } from '@/utils/notification';
 import useFormattedDate from '@/hooks/useFormattedDate';
 import useDurationFromISO from '@/hooks/useDurationFromISO';
@@ -19,6 +20,7 @@ const BookingCard: FC<BookingCardProps> = ({
   const takeOffTime = useFormattedDate(takeOff.time);
   const landingTime = useFormattedDate(landing.time);
   const totalTime = useDurationFromISO(takeOff.time, landing.time);
+  const airlineCompanyLogo = `/airline-logos/${generateSlug(getAirlineCompanyNameByCode(airlineCompanyCode))}.png`;
 
   const handleBookFlight = () => {
     fetch(
@@ -88,9 +90,13 @@ const BookingCard: FC<BookingCardProps> = ({
             </div>
 
             <div className="col-4 col-sm-4 col-md-4 col-lg-4 booking-card__item spacing spacing--small align-items-center text-center">
-              <p className="booking-card__text booking-card__text--medium text-semibold">
-                {getAirlineCompanyNameByCode(airlineCompanyCode)}
-              </p>
+              <div className="booking-card__airline-company-logo">
+                <img
+                  src={airlineCompanyLogo}
+                  alt=""
+                  className="booking-card__airline-company-logo-img"
+                />
+              </div>
 
               <div className="booking-card__icon booking-card__icon--rotated text-primary">
                 <Icon.Airplane weight="fill" fontSize={22} />
