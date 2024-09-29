@@ -15,11 +15,11 @@
     border-radius: 0 !important;
   }
 
-  & > *:first-child > .input {
+  & > *:first-child .input {
     border-radius: 999px 0 0 999px;
   }
 
-  & > *:last-child > .input {
+  & > *:last-child .input {
     border-radius: 0 999px 999px 0;
   }
 }

@@ -1,0 +1,58 @@
+//
+// Dropdown Menu
+//
+
+@import '../../../styles/variables';
+
+.dropdown-menu {
+  position: relative;
+
+  &.is-active &__menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(32px + 10px); // 32px = .select-menu__inner height
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 230px;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ececec;
+    background-color: #ffff;
+    color: #7a7a7a;
+    z-index: 100;
+    opacity: 0;
+    overflow: auto;
+    transform: translateY(-7px);
+    visibility: hidden;
+    transition: all 425ms;
+  }
+
+  &__item {
+    padding: 5px 10px;
+    border-radius: calc(8px / 2); // 8px = .select-menu__menu border-radius
+    transition: all 225ms;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #f1f1f1;
+    }
+
+    &.is-selected {
+      background-color: $color-primary;
+      color: #fff;
+      pointer-events: none;
+    }
+  }
+}

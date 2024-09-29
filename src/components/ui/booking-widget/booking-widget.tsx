@@ -4,6 +4,7 @@ import { getCodeByCity } from '@/utils/getCodeByCity';
 import { useAppDispatch } from '@/utils/hooks';
 import { getRandomMultipleOfFive } from '@/utils/getRandomMultipleOfFive';
 import { setFlights } from '@/slices/flightsSlice';
+import { airportCodes } from '@/utils/constants';
 import * as Icon from 'phosphor-react';
 import cx from 'classnames';
 
@@ -12,6 +13,7 @@ import ButtonGroup from '@/components/ui/button-group';
 import Input from '@/components/ui/input';
 import InputGroup from '@/components/ui/input-group';
 import DatePicker from '@/components/ui/date-picker';
+import DropdownMenu from '@/components/ui/dropdown-menu';
 import Loader from '@/components/ui/loader';
 
 import './booking-widget.scss';
@@ -28,6 +30,8 @@ const BookingWidget = () => {
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>('');
   const [selectedDayRange, setSelectedDayRange] = useState<any>(defaultRange);
+  const [airportNameDataForTakeOff, setAirportNameDataForTakeOff] = useState<any[]>([]);
+  const [airportNameDataForLanding, setAirportNameDataForLanding] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [tab, setTab] = useState<string>('round-trip');
 
@@ -118,6 +122,40 @@ const BookingWidget = () => {
     }
   }, [selectedDayRange]);
 
+  useEffect(() => {
+    const airportCodesArray = Object.entries(airportCodes).map(([code, name]) => ({
+      code,
+      name,
+    }));
+    const formattedAirportCodes = airportCodesArray
+      .map((airport) => ({
+        name: airport.name,
+        value: airport.code,
+      }))
+      .sort((a: any, b: any) => a.name.localeCompare(b.name));
+
+    setAirportNameDataForTakeOff(formattedAirportCodes);
+    setAirportNameDataForLanding(formattedAirportCodes);
+  }, []);
+
+  useEffect(() => {
+    const findIsSelected = airportNameDataForTakeOff.filter((item) => item.isSelected)[0];
+
+    if (!findIsSelected) return;
+
+    setTakeOff(findIsSelected?.name);
+  }, [airportNameDataForTakeOff]);
+
+  useEffect(() => {
+    const findIsSelected = airportNameDataForLanding.filter((item) => item.isSelected)[0];
+
+    console.log(findIsSelected);
+
+    if (!findIsSelected) return;
+
+    setLanding(findIsSelected?.name);
+  }, [airportNameDataForLanding]);
+
   return (
     <div className="booking-widget">
       <div className="booking-widget__header">
@@ -165,27 +203,46 @@ const BookingWidget = () => {
             {tab === 'round-trip' && (
               <>
                 <InputGroup>
-                  <Input
-                    value={takeOff}
-                    onChange={(e: any) => setTakeOff(e.target.value)}
-                    icon={<Icon.AirplaneTakeoff weight="fill" />}
-                    placeholder="Example: London"
-                  />
-                  <Input
-                    value={landing}
-                    onChange={(e: any) => setLanding(e.target.value)}
-                    icon={<Icon.AirplaneLanding weight="fill" />}
-                    placeholder="Example: London"
-                  />
+                  <DropdownMenu
+                    options={airportNameDataForTakeOff}
+                    setOptions={setAirportNameDataForTakeOff}
+                    className="w-100"
+                  >
+                    <Input
+                      value={takeOff}
+                      onChange={(e: any) => setTakeOff(e.target.value)}
+                      icon={<Icon.AirplaneTakeoff weight="fill" />}
+                      placeholder="Example: London"
+                    />
+                  </DropdownMenu>
+                  <DropdownMenu
+                    options={airportNameDataForLanding}
+                    setOptions={setAirportNameDataForLanding}
+                    className="w-100"
+                  >
+                    <Input
+                      value={landing}
+                      onChange={(e: any) => setLanding(e.target.value)}
+                      icon={<Icon.AirplaneLanding weight="fill" />}
+                      placeholder="Example: London"
+                    />
+                  </DropdownMenu>
                 </InputGroup>
               </>
             )}
             {tab === 'one-way' && (
-              <Input
-                value={takeOff}
-                onChange={(e: any) => setTakeOff(e.target.value)}
-                icon={<Icon.AirplaneTakeoff weight="fill" />}
-              />
+              <DropdownMenu
+                options={airportNameDataForTakeOff}
+                setOptions={setAirportNameDataForTakeOff}
+                className="w-100"
+              >
+                <Input
+                  value={takeOff}
+                  onChange={(e: any) => setTakeOff(e.target.value)}
+                  icon={<Icon.AirplaneTakeoff weight="fill" />}
+                  placeholder="Example: London"
+                />
+              </DropdownMenu>
             )}
           </div>
 
