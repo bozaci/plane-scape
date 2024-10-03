@@ -1,3 +1,8 @@
+> **Important:** You must enable the CORS proxy, or API requests will not work. <br />
+> To successfully send requests to the external API, **you must use a CORS proxy**. Follow these steps: <br />
+> 1. Go to [https://cors-anywhere.herokuapp.com](https://cors-anywhere.herokuapp.com) <br />
+> 2. Click the **"Request temporary access to the demo server"** button.
+
 [![Plane Scape](/banner.png)](https://plane-scape-app.vercel.app/)
 
 # [**Plane Scape**](https://plane-scape-app.vercel.app/)
