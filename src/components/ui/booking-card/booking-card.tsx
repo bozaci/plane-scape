@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { useState, FC } from 'react';
 import * as Icon from 'phosphor-react';
 import { BookingCardProps } from './booking-card.type';
 import { getCityByCode } from '@/utils/getCityByCode';
@@ -7,8 +7,10 @@ import { generateSlug } from '@/utils/generateSlug';
 import { errorNotify, successNotify } from '@/utils/notification';
 import useFormattedDate from '@/hooks/useFormattedDate';
 import useDurationFromISO from '@/hooks/useDurationFromISO';
+import cx from 'classnames';
 
 import Button from '@/components/ui/button';
+import Loader from '@/components/ui/loader';
 import './booking-card.scss';
 
 const BookingCard: FC<BookingCardProps> = ({
@@ -21,8 +23,10 @@ const BookingCard: FC<BookingCardProps> = ({
   const landingTime = useFormattedDate(landing.time);
   const totalTime = useDurationFromISO(takeOff.time, landing.time);
   const airlineCompanyLogo = `/airline-logos/${generateSlug(getAirlineCompanyNameByCode(airlineCompanyCode))}.png`;
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleBookFlight = () => {
+    setIsLoading(true);
     fetch(
       `${import.meta.env.VITE_PROXY_URL}/${import.meta.env.VITE_DATABASE_API_BASE_URL}/book-flight`,
       {
@@ -55,9 +59,12 @@ const BookingCard: FC<BookingCardProps> = ({
             `Successfully booked this flight: ${getCityByCode(takeOff.airport)} - ${getCityByCode(landing.airport)}`,
           );
         }
+
+        setIsLoading(false);
       })
       .catch((err) => {
         errorNotify(err);
+        setIsLoading(false);
       });
   };
 
@@ -138,9 +145,19 @@ const BookingCard: FC<BookingCardProps> = ({
             <Button
               onClick={handleBookFlight}
               theme="primary"
-              className="booking-card__book-flight-button text-semibold"
+              className={cx('booking-card__book-flight-button text-semibold', {
+                'button--theme-gray': isLoading,
+              })}
+              disabled={isLoading}
             >
-              Book Flight
+              {isLoading ? (
+                <>
+                  <Loader />
+                  <span className="ms-1">Booking..</span>
+                </>
+              ) : (
+                'Book Flight'
+              )}
             </Button>
           )}
         </div>
