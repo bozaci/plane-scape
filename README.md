@@ -1,10 +1,18 @@
 [![Plane Scape](/banner.png)](https://plane-scape-app.vercel.app/)
 
+> **Important:** You must enable the CORS proxy, or API requests will not work. <br />
+> To successfully send requests to the external API, **you must use a CORS proxy**. Follow these steps: <br />
+> 1. Go to [https://cors-anywhere.herokuapp.com](https://cors-anywhere.herokuapp.com) <br />
+> 2. Click the **"Request temporary access to the demo server"** button. <br />
+> 3. Refresh the application website, and the data should now load correctly. [Click here for the application website.](https://plane-scape-app.vercel.app)
+
 # [**Plane Scape**](https://plane-scape-app.vercel.app/)
 
 **Plane Scape** is an application developed to view and manage flight information. <br />This project allows users to easily track and manage flight information.
 
 Project Demo Link: [https://plane-scape-app.vercel.app/](https://plane-scape-app.vercel.app/)
+
+Make sure to complete this before running the project!
 
 ## Project Screenshots
 

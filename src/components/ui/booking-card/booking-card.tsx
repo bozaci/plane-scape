@@ -90,13 +90,17 @@ const BookingCard: FC<BookingCardProps> = ({
             </div>
 
             <div className="col-4 col-sm-4 col-md-4 col-lg-4 booking-card__item spacing spacing--small align-items-center text-center">
-              <div className="booking-card__airline-company-logo">
-                <img
-                  src={airlineCompanyLogo}
-                  alt=""
-                  className="booking-card__airline-company-logo-img"
-                />
-              </div>
+              {airlineCompanyCode ? (
+                <div className="booking-card__airline-company-logo">
+                  <img
+                    src={airlineCompanyLogo}
+                    alt={getAirlineCompanyNameByCode(airlineCompanyCode)}
+                    className="booking-card__airline-company-logo-img"
+                  />
+                </div>
+              ) : (
+                <p className="booking-card__text booking-card__text--medium">-</p>
+              )}
 
               <div className="booking-card__icon booking-card__icon--rotated text-primary">
                 <Icon.Airplane weight="fill" fontSize={22} />

@@ -40,6 +40,8 @@ const airportCodes: Record<string, string> = {
   VLC: 'Valencia',
   LCA: 'Larnaca',
   FUE: 'Fuerteventura',
+  SIA: 'Siena',
+  LHR: 'London',
 };
 
 const airlineCompanyCodes: Record<string, string> = {
@@ -49,6 +51,7 @@ const airlineCompanyCodes: Record<string, string> = {
   MP: 'Martinair',
   DL: 'Delta Airlines',
   CD: 'Nauru Airlines',
+  SQ: 'Singapore Airlines',
 };
 
 export { airportCodes, airlineCompanyCodes };
