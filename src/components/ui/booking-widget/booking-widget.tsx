@@ -149,8 +149,6 @@ const BookingWidget = () => {
   useEffect(() => {
     const findIsSelected = airportNameDataForLanding.filter((item) => item.isSelected)[0];
 
-    console.log(findIsSelected);
-
     if (!findIsSelected) return;
 
     setLanding(findIsSelected?.name);
